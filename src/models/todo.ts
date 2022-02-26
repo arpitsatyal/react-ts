@@ -1,10 +1,9 @@
 class Todo {
-  constructor(todoText: string) {
-    this.text = todoText;
-    this.id = new Date().toISOString();
+  constructor(title: string, completed?: boolean) {
+    this.title = title;
+    this.completed = completed;
   }
-  id: string;
-  text: string;
+  title: string;
+  completed?: boolean;
 }
-
 export default Todo;

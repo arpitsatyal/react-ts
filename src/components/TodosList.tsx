@@ -1,7 +1,18 @@
-import { FC } from "react";
+import React, { FC } from "react";
+import { List, ListItem, ListIcon } from "@chakra-ui/react";
+import { CheckIcon } from "@chakra-ui/icons";
 
-export const TodosList: FC<{ item: { id: string; text: string } }> = ({
-  item,
-}) => {
-  return <li key={item.id}>{item.text}</li>;
+const TodosList: FC<{ item: { title: string; completed?: boolean; }, onTodoDelete: () => void; }> = (props) => {
+  return (
+    <div>
+      <List spacing={3}>
+        <ListItem onClick={props.onTodoDelete}>
+          <ListIcon as={CheckIcon} color="green.500" />
+          {props.item.title}
+        </ListItem>
+      </List>
+    </div>
+  );
 };
+
+export default TodosList;
