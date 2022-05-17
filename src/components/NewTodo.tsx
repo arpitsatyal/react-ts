@@ -13,7 +13,7 @@ const NewTodo: FC<{ onAddTodo: (val: string) => void }> = (props) => {
     <div>
       <FormControl>
         <FormLabel htmlFor="text">Add Todo</FormLabel>
-        <Input placeholder="add todo" id="text" ref={textInput} />
+        <Input placeholder="add todo" id="text" ref={textInput} style={{ marginBottom: '20px' }}/>
         <Button colorScheme="blue" onClick={submitHandler}>
           Button
         </Button>
